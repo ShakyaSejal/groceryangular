@@ -1,0 +1,23 @@
+<section id="featured-products" class="py-5">
+    <h2 class="text-center mb-4">VEGETABLE</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of vegetable">
+          <div class="card mb-4">
+            <img [src]="item.image" class="card-img-top" [alt]="item.name">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">{{item.genre}}</p>
+              <h1>{{item.price}}</h1>
+              <a a routerLink="['/login']"class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+  
+  
+  

@@ -1,0 +1,22 @@
+#featured-products .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  #featured-products .card img {
+    height: 200px; /* Adjust this value as needed */
+    object-fit: cover;
+  }
+  
+  #featured-products .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #featured-products .card-title,
+  #featured-products .card-text {
+    margin-bottom: auto;
+  }
+  

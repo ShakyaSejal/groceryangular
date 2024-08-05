@@ -1,0 +1,31 @@
+.hero {
+    background-color: #f8f9fa;
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+  }
+  
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  #promotions {
+    background-color: #e9ecef;
+  }
+  
+  #contact-us {
+    background-color: #f8f9fa;
+  }
+  
