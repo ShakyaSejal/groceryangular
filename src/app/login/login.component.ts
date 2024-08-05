@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,19 +27,33 @@ onLogin() {
   }
 
   // Retrieve stored credentials for regular users
-  const userCredentials = localStorage.getItem('userCredentials');
+  // const userCredentials = localStorage.getItem('userCredentials');
 
-  if (userCredentials) {
-    const { userName: storedUserName, password: storedPassword } = JSON.parse(userCredentials);
+  // if (userCredentials) {
+  //   const { userName: storedUserName, password: storedPassword } = JSON.parse(userCredentials);
 
-    // Check if the credentials match user credentials
-    if (this.loginObj.userName === storedUserName && this.loginObj.password === storedPassword) {
-      this.router.navigateByUrl('/cart');
-      return; // Exit the function after redirecting
+  //   // Check if the credentials match user credentials
+  //   if (this.loginObj.userName === storedUserName && this.loginObj.password === storedPassword) {
+  //     this.router.navigateByUrl('/cart');
+  //     return; // Exit the function after redirecting
+  //   }
+  // }
+
+  const store = localStorage.getItem('userCredentials')
+  if(store){
+    const credentials = JSON.parse(store)
+    if(credentials.userName === this.loginObj.userName && credentials.password === this.loginObj.password){
+      alert('sucess')
+      this.router.navigate(['/'])
+    } else {
+      alert("invalid")
     }
+  }else{
+    alert('not found user')
   }
+  
 
   // If no match is found
-  alert('Wrong credentials');
+  // alert('Wrong credentials');
 }
 }

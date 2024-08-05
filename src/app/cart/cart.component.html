@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Item</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of fruitData">
+        <td>
+          <img [src]="item.image" alt="" class="img-thumbnail" style="width: 50px;" />
+        </td>
+        <td>{{ item.name }}</td>
+        <td>Rs {{ item.price }}</td>
+        <td>1</td>
+        <td>Rs {{ item.price }}</td>
+        <td>
+          <button (click)="removeItem(item.id)" class="btn btn-danger btn-sm">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h1 class="font-weight-bold text-dark mb-4">Cart Totals</h1>
+      <div class="list-group">
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          SubTotal
+          <span>Rs {{ subtotal }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Delivery Fee
+          <span>Rs {{ deliveryFee }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Promo Discount
+          <span>Rs {{ promoDiscount }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <strong>Total</strong>
+          <strong class="text-success">Rs {{ total }}</strong>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button (click)="goPay()" class="btn btn-warning btn-lg">Proceed To Checkout</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p class="text-muted mb-2">If you have a promo code, enter it here</p>
+      <form (ngSubmit)="applyPromoCode()" class="input-group">
+        <input
+          type="text"
+          name="promoCode"
+          placeholder="Promo code"
+          class="form-control"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-dark" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

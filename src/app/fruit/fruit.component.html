@@ -2,14 +2,17 @@
     <h2 class="text-center mb-4">FRUITS</h2>
     <div class="container">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of fruit">
-          <div class="card mb-4">
-            <img [src]="item.image" class="card-img-top" [alt]="item.name">
+        <div class="col-md-4" *ngFor="let fruit of fruit">
+          <div class="card mb-4" (click)="view(fruit.id)">
+            <img [src]="fruit.image" class="card-img-top" [alt]="fruit.name">
             <div class="card-body">
-              <h5 class="card-title">{{item.name}}</h5>
-              <p class="card-text">{{item.genre}}</p>
-              <h1>{{item.price}}</h1>
-              <a a [routerLink]="['/login']"class="btn btn-primary">Add to Cart</a>
+              <h5 class="card-title">{{fruit.name}}</h5>
+              <p class="card-text">{{fruit.genre}}</p>
+              <h1>{{fruit.price}}</h1>
+              <a 
+              (click)="add()"
+              class="btn btn-primary">Add to Cart</a>
+               <button type="submit">add</button>
             </div>
           </div>
         </div>

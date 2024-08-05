@@ -36,7 +36,7 @@ export const routes: Routes = [
         component:VegetableComponent
     },
     {
-        path:'cart',
+        path:'cart/:id',
         component:CartComponent
     },
     {
